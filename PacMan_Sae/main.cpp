@@ -18,9 +18,13 @@ using namespace std;
 
 int ppal(){
     // these var are only used for debugging purpose :
-    string mapPathAbs = "/mnt/Windows/Users/aleni/Mes documents/3_EDUCATION"
-                     "/IUT_AIX_MARSEILLE/BUT1_info_2024-2025/SAE/SAE1.01/SAE-101_v.1.00/SAE-DE-TES-MORTS/PacMan_Sae/Map1.txt";
-    string mapPath = "../../Map1.txt";
+    string mapPath1 = "../../Map1.txt";
+    string mapPath2 = "../../Map2.txt";
+
+    string stealerWinA = "Bravo tu a collecté tous les collectible !";
+    string stealerWinB = "Bravo tu fumes autant que Casali !";
+    string copWinA = "Oh non, le policier t'a attrapé !";
+    string copWinB = "Jouini t'as attrapé !";
 
     char tour = 'v' ;
     config param;
@@ -30,13 +34,14 @@ int ppal(){
     CPosition posV ;
 
     //initialisation pour Mingl
-    MinGL window("01 - Shapes", nsGraphics::Vec2D(640, 640), nsGraphics::Vec2D(140, 140), nsGraphics::KBlack);
+    MinGL window("Game", nsGraphics::Vec2D(640, 640), nsGraphics::Vec2D(140, 140), nsGraphics::KBlack);
     window.initGlut();
     window.initGraphic();
 
     unsigned tabVole = 0;
-    initMat(Mat, 15, 15, posP, posV, mapPath);
-    //
+    initMat(Mat, 15, 15, posP, posV, mapPath1);
+    // ver for map 2 :
+    // initMat(Mat, 15, 34, posP, posV, mapPath2);
 
     // showMatrix(Mat,tour); whitouth mingl
     showMatrix(window, Mat, tour);
@@ -46,14 +51,14 @@ int ppal(){
         if (posP == posV) {
             couleurF(KNoir);
             couleur(KRouge);
-            cout << "Jouini t'as attrapé !" << endl ;
+            cout << copWinA << endl ;
             couleur(KReset);
             break;
         }
         if (tabVole == 5) {
             couleurF(KNoir);
             couleur(KVert);
-            cout << "Bravo tu fumes autant que Casali !" << endl ;
+            cout << stealerWinA << endl ;
             couleur(KReset);
             break;
         }

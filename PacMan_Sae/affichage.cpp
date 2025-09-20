@@ -9,12 +9,12 @@
 #endif // AFFICHAGE_CPP
 
 #include <iostream>
-#include <vector>
+// #include <vector>
 #include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <termios.h>
-#include <fstream>
+// #include <fstream>
 #include <thread>
 
 #include "affichage.h"
@@ -25,7 +25,7 @@
 #include "mingl/shape/rectangle.h"
 #include "mingl/shape/circle.h"
 #include "mingl/shape/line.h"
-#include "mingl/shape/triangle.h"
+// #include "mingl/shape/triangle.h"
 
 
 #define FPS_LIMIT 60
