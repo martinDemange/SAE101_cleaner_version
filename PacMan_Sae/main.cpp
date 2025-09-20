@@ -35,7 +35,7 @@ int ppal(){
     window.initGraphic();
 
     unsigned tabVole = 0;
-    initMat(Mat, 15, 15, posP, posV, "/mnt/Windows/Users/aleni/Mes documents/3_EDUCATION/IUT_AIX_MARSEILLE/BUT1_info_2024-2025/SAE/SAE1.01/SAE-101_v.1.00/SAE-DE-TES-MORTS/PacMan_Sae/Map1.txt");
+    initMat(Mat, 15, 15, posP, posV, mapPath);
     //
 
     // showMatrix(Mat,tour); whitouth mingl

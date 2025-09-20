@@ -25,7 +25,7 @@ void initParam(config& param) {
     string confPathAbs ="/mnt/Windows/Users/aleni/Mes documents/3_EDUCATION"
                          "/IUT_AIX_MARSEILLE/BUT1_info_2024-2025/SAE/SAE1.01/SAE-101_v.1.00/SAE-DE-TES-MORTS/PacMan_Sae";
 
-    ifstream paramFichier("/mnt/Windows/Users/aleni/Mes documents/3_EDUCATION/IUT_AIX_MARSEILLE/BUT1_info_2024-2025/SAE/SAE1.01/SAE-101_v.1.00/SAE-DE-TES-MORTS/PacMan_Sae");
+    ifstream paramFichier(confPath);
     if (!paramFichier.good())
         exit(2);
     string entree;
