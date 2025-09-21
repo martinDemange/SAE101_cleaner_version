@@ -73,6 +73,10 @@ void tableauDraw( MinGL & window, int x, int y){
 
 }
 
+void tableauDrawB(MinGL & window, int x, int y){
+    window << nsShape::Rectangle(nsGraphics::Vec2D(25*x, 25*y), nsGraphics::Vec2D(25*x+25, 25*y+25), nsGraphics::KYellow);
+}
+
 void  showMatrix (MinGL & window ,const CMatrix & Mat, const char &tour){ // j'ai ajouter le param window car sans ça il serait pas possible d'utiliser la fenetre mingl sans la decalre dans la fonction ce qui posera un probleme
     // Variable qui tient le temps de frame
     chrono::microseconds frameTime = chrono::microseconds::zero();
@@ -106,7 +110,7 @@ void  showMatrix (MinGL & window ,const CMatrix & Mat, const char &tour){ // j'a
                 couleur(KVert);
                 cout << kTableau ;
                 couleur(KReset);
-                tableauDraw(window,j,i);
+                tableauDrawB(window,j,i);
             }
             else if (Mat[i][j] == kWall){
                 couleur(KJaune);
