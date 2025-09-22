@@ -5,17 +5,24 @@
 
 using namespace std;
 
-void initMat (CMatrix & Mat, const unsigned nbLine, const unsigned nbColumn, CPosition & posP, CPosition & posV, const string& fileName){
-    Mat.assign(nbLine,CVLine(nbColumn));
+void initMat (CMatrix & Mat, CPosition & posP, CPosition & posV, const string& fileName){
     ifstream mapfile (fileName);
     if (!mapfile.good()) {
         cerr << "i can't find the file moommy" << endl;
         exit(2);
     }
-    string input;
-    for (unsigned i (0); i < nbLine; ++i){
+    // file exists, get mapsize from it. maybe find a better way to do that lol
+    size_t nbLine;
+    nbLine << mapfile;
+    size_t nbColumn;
+    nbColumn << mapfile;
+    
+    Mat.assign(nbLine,CVLine(nbColumn));
+    string input;  // warn: this input var isn't used out of the for loop.
+    getline(mapfile, input);  // TODO: get rid of the first line after getting size
+    for (unsigned i = 0; i < nbLine; ++i){
         getline(mapfile, input);
-        for (unsigned j (0); j < nbColumn; ++j) {
+        for (unsigned j = 0; j < nbColumn; ++j) {
             if (input[j] == kTokenP) {
                 posP = {i , j};
             }
